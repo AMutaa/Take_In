@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TextBox from './Main';
 import './App.css'
 
 export default class App extends Component {
@@ -6,6 +7,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>Take In</h1>
+        <TextBox />
       </div>
     )
   }
