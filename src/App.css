@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Dosis', sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  letter-spacing: 3px;
+  color: #6200ee;
+}
