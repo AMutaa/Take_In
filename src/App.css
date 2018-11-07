@@ -7,9 +7,12 @@
 
 body {
   font-family: 'Dosis', sans-serif;
+  text-align: center;
+}
+
+.App {
   display: flex;
   justify-content: center;
-  text-align: center;
 }
 
 h1 {

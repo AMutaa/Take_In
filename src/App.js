@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
-import TextBox from './Main';
-import './App.css'
+import React, { Component, Fragment } from 'react';
+import Input from './Components/Input'
+import './App.css';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Take In</h1>
-        <TextBox />
-      </div>
-    )
+      <Fragment>
+        <Input />
+      </Fragment>
+    );
   }
 }
+
+export default App;
