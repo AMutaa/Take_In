@@ -1,4 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, {
+  Component,
+  Fragment
+} from 'react';
 import styled from 'styled-components'
 
 export default class Input extends Component {
@@ -16,7 +19,9 @@ export default class Input extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const { value } = this.state
+    const {
+      value
+    } = this.state
     const result = sequenceNum(value)
     this.setState({
       answer: result
@@ -24,17 +29,35 @@ export default class Input extends Component {
   }
 
   render() {
-    const { answer, value } = this.state
-    return (
-      <Fragment >
-        <Section>
-          <h1>Find the value in Finobacci Sequence by the Index</h1>
-          <Answer>Answer: {answer}</Answer>
-          <form onSubmit={this.handleSubmit}>
-            <InputField type='number' value={value} onChange={this.handleChange} placeholder="Type an Index..." />
-          </form>
-        </Section>
-      </Fragment>
+    const {
+      answer,
+      value
+    } = this.state
+    return ( <
+      Fragment >
+      <
+      Section >
+      <
+      h1 > Find the value in Finobacci Sequence by the Index < /h1> <
+      Answer > Answer: {
+        answer
+      } < /Answer> <
+      form onSubmit = {
+        this.handleSubmit
+      } >
+      <
+      InputField type = 'number'
+      value = {
+        value
+      }
+      onChange = {
+        this.handleChange
+      }
+      placeholder = "Type an Index..." / >
+      <
+      /form> <
+      /Section> <
+      /Fragment>
     )
   }
 }
@@ -50,19 +73,19 @@ function sequenceNum(num) {
 }
 
 
-const Section = styled.div`
+const Section = styled.div `
 display: grid;
 margin: 20px 20px;
 `;
 
-const Answer = styled.h2`
+const Answer = styled.h2 `
 height: 40px;
 font-size: 1.5em;
 letter-spacing: 3px;
 color: #6200ee;
 
 `;
-const InputField = styled.input`
+const InputField = styled.input `
 width: 200px;
 height: 48px;
 font-size:1.2em;
@@ -73,4 +96,3 @@ outline:none;
 font-weight:400;
 background:#F5F5F5;
 `;
-

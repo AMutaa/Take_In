@@ -1,18 +1,50 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
 
 export default class DateInput extends Component {
+  state = {
+    value: '',
+    answer: ''
+  }
+
+  handleChange = (e) => {
+    const typedChar = e.target.value
+    this.setState({
+      value: typedChar
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const dateConverter = () => {
+      const dateString = this.state.value
+      const dateObj = new Date(dateString)
+      const momentObj = moment(dateObj)
+      const momentString = momentObj.format('MM/DD/YYYY')
+      console.log(momentString)
+    }
+
+    dateConverter()
+    this.setState({
+      answer: this.state.value,
+      value: ''
+    })
+  }
+
+
   render() {
+
+    const { value, answer } = this.state
     return (
       <Fragment>
         <Section>
           <h1>Convert string to Date</h1>
           <Answer>
-            Answer
+            Answer: {answer}
           </Answer>
-          <form action="">
-            <InputField>
-            </InputField>
+          <form onSubmit={this.handleSubmit} >
+            <InputField value={value} placeholder='Type...' onChange={this.handleChange} />
           </form>
         </Section>
       </Fragment>
