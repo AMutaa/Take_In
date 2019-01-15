@@ -20,16 +20,20 @@ export default class DateInput extends Component {
     const dateConverter = () => {
       const dateString = this.state.value
       const dateObj = new Date(dateString)
+      console.log(dateObj)
       const momentObj = moment(dateObj)
+      console.log(momentObj)
       const momentString = momentObj.format('MM/DD/YYYY')
       console.log(momentString)
+      this.setState({
+        answer: momentString
+      })
     }
-
     dateConverter()
-    this.setState({
-      answer: this.state.value,
-      value: ''
-    })
+  }
+
+  componentWillReceiveProps(nextprops) {
+    console.log(nextprops)
   }
 
 
